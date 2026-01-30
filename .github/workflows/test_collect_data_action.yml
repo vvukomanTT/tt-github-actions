@@ -26,6 +26,7 @@ jobs:
             set -o pipefail # Ensures that the exit code reflects the first command that fails
             echo "texttexttext device timeout, potential hang detected, the device is unrecoverable <randomtext>"
             pytest \
+                -s -vv \
                 --junitxml=pytest.xml \
                 --cov-report=term-missing \
                 --cov=src \
