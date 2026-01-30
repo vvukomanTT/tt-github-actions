@@ -153,11 +153,14 @@ def get_job_failure_signature(github_job: Dict[str, Any], logs: Optional[str] = 
     triage_tag = "[tt-triage]"
 
     if logs and triage_phrase in logs:
+        print("signature found")
         if signature:
             if triage_tag not in signature:
                 signature = f"{signature} {triage_tag}"
         else:
             signature = triage_tag
+    else
+        print("signature not found")
 
     return signature
 
